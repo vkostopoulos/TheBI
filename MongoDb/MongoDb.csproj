@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E88562B1-C37B-4703-A86C-0526E7367ECA}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MongoDb</RootNamespace>
+    <AssemblyName>MongoDb</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AspNet.Identity.MongoDB, Version=0.6.2.17, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AspNetIdentity.MongoDB.0.6.2\lib\net45\AspNet.Identity.MongoDB.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="AutoMapper, Version=6.1.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.6.1.0\lib\net45\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MongoDB.Bson, Version=2.4.3.23, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Bson.2.4.3\lib\net45\MongoDB.Bson.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MongoDB.Driver, Version=2.4.3.23, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Driver.2.4.3\lib\net45\MongoDB.Driver.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MongoDB.Driver.Core, Version=2.4.3.23, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Driver.Core.2.4.3\lib\net45\MongoDB.Driver.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SimpleInjector, Version=4.0.7.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
+      <HintPath>..\packages\SimpleInjector.4.0.7\lib\net45\SimpleInjector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SimpleInjector.Extensions.ExecutionContextScoping, Version=4.0.0.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
+      <HintPath>..\packages\SimpleInjector.Extensions.ExecutionContextScoping.4.0.0\lib\net45\SimpleInjector.Extensions.ExecutionContextScoping.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.InteropServices.RuntimeInformation.4.0.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CollectionName.cs" />
+    <Compile Include="ReClasser.cs" />
+    <Compile Include="WmsAutoMapperProfile.cs" />
+    <Compile Include="CrmAutoMapperProfile.cs" />
+    <Compile Include="Entity.cs" />
+    <Compile Include="Enums\DesignType.cs" />
+    <Compile Include="Enums\EntityType.cs" />
+    <Compile Include="Enums\InvoiceType.cs" />
+    <Compile Include="Enums\RecipeiptType.cs" />
+    <Compile Include="GlobalVariables.cs" />
+    <Compile Include="IEntity.cs" />
+    <Compile Include="Models\Dto\Wms\AttributeDto.cs" />
+    <Compile Include="Models\Dto\Wms\CategoryDto.cs" />
+    <Compile Include="Models\Dto\Wms\InventoryMovementDto.cs" />
+    <Compile Include="Models\Dto\Wms\InvoiceDto.cs" />
+    <Compile Include="Models\Dto\Wms\ProductDto.cs" />
+    <Compile Include="Models\Dto\Wms\RecallDto.cs" />
+    <Compile Include="Models\Dto\Wms\ReceiptDto.cs" />
+    <Compile Include="Models\Dto\Wms\SaleDto.cs" />
+    <Compile Include="Models\Dto\Wms\StoreDto.cs" />
+    <Compile Include="Models\Wms\InventoryMovement.cs" />
+    <Compile Include="Models\Wms\Receipt.cs" />
+    <Compile Include="Models\Wms\Sale.cs" />
+    <Compile Include="Models\Wms\Recall.cs" />
+    <Compile Include="Models\Wms\Category.cs" />
+    <Compile Include="Models\Wms\Attribute.cs" />
+    <Compile Include="Models\Wms\Product.cs" />
+    <Compile Include="Models\Wms\InvoiceItem.cs" />
+    <Compile Include="Models\Wms\Invoice.cs" />
+    <Compile Include="Models\Wms\Store.cs" />
+    <Compile Include="Models\Crm\Action.cs" />
+    <Compile Include="Models\Crm\ActionValue.cs" />
+    <Compile Include="Models\BaseModel.cs" />
+    <Compile Include="Models\Dto\Crm\ActionDto.cs" />
+    <Compile Include="Models\Dto\Crm\ContactDto.cs" />
+    <Compile Include="Models\Crm\Contact.cs" />
+    <Compile Include="Models\Crm\CustomField.cs" />
+    <Compile Include="Models\Crm\CustomFieldValue.cs" />
+    <Compile Include="Models\Dto\Crm\CustomFieldDto.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RepositoryManager\CollectionStatsResult.cs" />
+    <Compile Include="RepositoryManager\IRepositoryManager.cs" />
+    <Compile Include="RepositoryManager\MongoRepositoryManager.cs" />
+    <Compile Include="RepositoryManager\ValidateCollectionResult.cs" />
+    <Compile Include="Repository\IRepository.cs" />
+    <Compile Include="Repository\MongoRepository.cs" />
+    <Compile Include="Services\IContactsService.cs" />
+    <Compile Include="Services\IActionsService.cs" />
+    <Compile Include="Services\Impl\ContactsService.cs" />
+    <Compile Include="Services\Impl\ActionsService.cs" />
+    <Compile Include="Services\Impl\CustomFieldsService.cs" />
+    <Compile Include="Services\ICustomFieldsService.cs" />
+    <Compile Include="Util.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Identity\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
